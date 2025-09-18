@@ -1,5 +1,4 @@
 const express = require('express');
-const open = require('open');
 
 const app = express();
 const PORT = 3001;
@@ -10,9 +9,10 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server running at http://localhost:${PORT}`);
-  
-  // Open Firefox at localhost:3001
-  open(`http://localhost:${PORT}`, {app: {name: 'firefox'}});
+
+  // Firefox open করার জন্য dynamic import
+  const open = (await import('open')).default;
+  await open(`http://localhost:${PORT}`, {app: {name: 'firefox'}});
 });
