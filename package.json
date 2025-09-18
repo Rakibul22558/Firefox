@@ -1,0 +1,13 @@
+{
+  "name": "firefox-localhost-server",
+  "version": "1.0.0",
+  "description": "Simple server that opens Firefox at localhost:3001",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "open": "^9.1.0"
+  }
+}
